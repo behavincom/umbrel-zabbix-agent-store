@@ -1,5 +1,5 @@
 manifestVersion: 1
-id: zabbix-agent2
+id: behavincom-zabbix-agent2
 name: Zabbix Agent 2
 category: system
 version: 1.0.0
