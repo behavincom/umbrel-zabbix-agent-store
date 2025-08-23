@@ -1,0 +1,18 @@
+manifestVersion: 1
+id: zabbix-agent2
+name: Zabbix Agent 2
+category: system
+version: 1.0.0
+tagline: Send host & Docker metrics to your Zabbix server
+description: |
+  Zabbix Agent 2 running in Docker on Umbrel. Monitors the Umbrel host
+  (CPU/mem/disk/net) and Docker containers. Uses the official zabbix/zabbix-agent2
+  image and supports Zabbix "Docker by Zabbix agent 2" template.
+developer: Zabbix SIA
+website: https://www.zabbix.com/
+support: https://www.zabbix.com/documentation
+dependencies: []
+path: ""
+releaseNotes: |
+  Initial release.
+port: 0
