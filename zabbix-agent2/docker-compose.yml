@@ -4,8 +4,10 @@ services:
     container_name: zabbix-agent2
     restart: unless-stopped
 
-    # To see host interfaces & bridges and collect host metrics
+    # Let the agent see host network interfaces and listen for passive checks
     network_mode: host
+
+    # Needed for reading host metrics and some /proc features (LLD, net, etc.)
     privileged: true
 
     environment:
@@ -14,14 +16,16 @@ services:
       - ZBX_HOSTNAME=${ZBX_HOSTNAME}
       - ZBX_DEBUGLEVEL=${ZBX_DEBUGLEVEL}
 
-    # Mounts for host/Docker metrics
+    # Mount host filesystems so Agent can read system metrics,
+    # and the Docker socket so Agent's Docker plugin can collect container metrics.
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
       - /:/hostfs:ro
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
       - /dev:/dev
+      - /var/run/docker.sock:/var/run/docker.sock
 
-    # Let the zabbix user talk to Docker via the socket
+    # Grant the container's zabbix user membership to the host's docker group.
+    # This is key for docker.sock access without changing host users.
     group_add:
       - "${DOCKER_GID}"
