@@ -2,7 +2,7 @@ manifestVersion: 1
 id: behavincom-zabbix-agent2
 name: Zabbix Agent 2
 category: system
-version: 1.0.1
+version: 1.0.2
 tagline: Send host & Docker metrics to your Zabbix server
 description: |
   Zabbix Agent 2 running in Docker on Umbrel. Monitors the Umbrel host
@@ -16,3 +16,5 @@ path: ""
 releaseNotes: |
   Initial release.
 port: 0
+icon: ./assets/icon.png
+gallery: []
