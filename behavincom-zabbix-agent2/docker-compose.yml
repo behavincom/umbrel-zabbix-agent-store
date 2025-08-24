@@ -10,6 +10,8 @@ services:
     # Needed for reading host metrics and some /proc features (LLD, net, etc.)
     privileged: true
 
+    user: "0:0"
+
     environment:
       - ZBX_SERVER_HOST=${ZBX_SERVER_HOST}
       - ZBX_SERVER_ACTIVE=${ZBX_SERVER_HOST}
