@@ -1,6 +1,7 @@
 services:
   agent:
-    image: zabbix/zabbix-agent2:${ZBX_IMAGE_TAG}
+    #image: zabbix/zabbix-agent2:${ZBX_IMAGE_TAG}
+    image: zabbix/zabbix-agent2:alpine-7.0-latest
     container_name: zabbix-agent2
     restart: unless-stopped
 
@@ -9,8 +10,6 @@ services:
 
     # Needed for reading host metrics and some /proc features (LLD, net, etc.)
     privileged: true
-
-    user: "0:0"
 
     environment:
       - ZBX_SERVER_HOST=${ZBX_SERVER_HOST}

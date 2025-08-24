@@ -15,4 +15,4 @@ export ZBX_DEBUGLEVEL="3"
 
 # Detect the docker group's numeric GID so the container can access /var/run/docker.sock
 # (Umbrel ships with Docker; this should return a number like 998/999/etc.)
-# export DOCKER_GID="$(getent group docker | awk -F: '{print $3}')"
+export DOCKER_GID="$(getent group docker | awk -F: '{print $3}')"
