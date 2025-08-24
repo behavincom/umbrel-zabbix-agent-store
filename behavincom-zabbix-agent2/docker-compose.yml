@@ -1,6 +1,6 @@
 services:
   agent:
-    image: zabbix/zabbix-agent2:alpine
+    image: zabbix/zabbix-agent2:${ZBX_IMAGE_TAG}
     container_name: zabbix-agent2
     restart: unless-stopped
 
